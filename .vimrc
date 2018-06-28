@@ -4,7 +4,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/takeP/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/takep/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('~/.cache/dein')
@@ -17,12 +17,26 @@ if dein#load_state('~/.cache/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
+  " かっこなどの補完
   call dein#add('cohama/lexima.vim')
+  " コード補完
   call dein#add('Shougo/neocomplete.vim')
-  " call dein#add('nathanaelkane/vim-indent-guides')
-  " let g:indent_guides_enable_on_vim_startup = 1
-  " call dein#add('Shougo/neocomplete.vim', { 'on_i': 1 })
-  " call dein#add('osyo-manga/vim-monster', { 'on_ft': 'ruby' })
+  " ファイル検索ツリーを表示する
+  call dein#add('scrooloose/nerdtree')
+  " 行選択ビジュアルモードでコメントアウト
+  call dein#add('tomtom/tcomment_vim')
+  " 文字コードやファイルタイプなどを表示する
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  let g:airline#extensions#tabline#enabled = 1
+  " インデントガイドライン
+  call dein#add('nathanaelkane/vim-indent-guides')
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_auto_colors = 0
+  hi IndentGuidesOdd  ctermbg=black
+  hi IndentGuidesEven ctermbg=darkgrey
+  " gitを使えるようにする
+  call dein#add('tpope/vim-gugitive')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
