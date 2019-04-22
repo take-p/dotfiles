@@ -4,7 +4,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/takep/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('~/.cache/dein')
@@ -86,11 +86,6 @@ set fileformats=unix,dos,mac
 "タブキーでスペースを入力
 set expandtab
 
-"画面上でタブ文字が占める幅
-set tabstop=4
-
-"タブキーで入力されるスペースの数を変更
-set softtabstop=4
 
 "改行時に前の行のインデントを継続する
 set autoindent
@@ -100,6 +95,34 @@ set smartindent
 
 "インデントの幅
 set shiftwidth=4
+
+"タブキーで入力されるスペースの数を変更
+set softtabstop=4
+
+"タブの幅(スペース何個分か)
+set tabstop=4
+
+if has("autocmd")
+  "ファイルタイプの検索を有効化
+  "filetype plugin on
+
+  "ファイルタイプに合わせたインデントを使用
+  filetype indent on
+
+  "sw=shiftwidth, sts=softtabstop, ts=tabstop, et=expandtab
+  autocmd FileType c      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType c++    setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType c#     setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType java   setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType python setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby   setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType html   setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType css    setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType php    setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType js     setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType vim    setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType zsh    setlocal sw=4 sts=4 ts=4 et
+endif
 
 "不可視文字の設定-----------------------------------------------------------
 
