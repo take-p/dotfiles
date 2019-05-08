@@ -86,7 +86,6 @@ set fileformats=unix,dos,mac
 "タブキーでスペースを入力
 set expandtab
 
-
 "改行時に前の行のインデントを継続する
 set autoindent
 
@@ -122,6 +121,9 @@ if has("autocmd")
   autocmd FileType js     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType vim    setlocal sw=2 sts=2 ts=2 et
   autocmd FileType zsh    setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType eruby  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType scss   setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType yaml   setlocal sw=2 sts=2 ts=2 et
 endif
 
 "不可視文字の設定-----------------------------------------------------------
@@ -158,3 +160,18 @@ set virtualedit=onemore
 
 "□や○文字が崩れる問題を解決
 set ambiwidth=double
+
+"コマンド保管------------------------------------------------------------------
+
+"コマンドモードの保管
+set wildmenu
+
+"保存するコマンド履歴の数
+set history=5000
+
+"改行時の自動コメントアウトを禁止--------------------------------------------
+augroup auto_comment_off
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
