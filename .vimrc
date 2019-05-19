@@ -44,7 +44,7 @@ if dein#load_state('~/.cache/dein')
   hi IndentGuidesEven ctermbg=darkgrey
   
   " gitを使えるようにする
-  call dein#add('tpope/vim-gugitive')
+  call dein#add('tpope/vim-fugitive')
 
   " コード補完
   call dein#add('Shougo/deoplete.nvim')
@@ -59,7 +59,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/neoinclude.vim')
 
   " You can specify revision/branch/tag.
-  " call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
+  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
 
   " Required:
   call dein#end()
