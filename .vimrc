@@ -59,7 +59,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/neoinclude.vim')
 
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
+  " call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
 
   " Required:
   call dein#end()
@@ -79,7 +79,8 @@ syntax enable
 
 
 
-
+"カラースキーマ------------------------------------------------------------
+colorscheme iceberg
 
 "文字コード----------------------------------------------------------------
 
