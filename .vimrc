@@ -47,7 +47,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-fugitive')
 
   " コード補完
-  call dein#add('Shougo/deoplete.nvim')
+  "call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
