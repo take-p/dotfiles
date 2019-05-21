@@ -37,14 +37,24 @@ if dein#load_state('~/.cache/dein')
   let g:airline#extensions#tabline#enabled = 1
   
   " インデントガイドライン
-  call dein#add('nathanaelkane/vim-indent-guides')
-  let g:indent_guides_enable_on_vim_startup = 1
-  let g:indent_guides_auto_colors = 0
-  hi IndentGuidesOdd  ctermbg=black
-  hi IndentGuidesEven ctermbg=darkgrey
-  
+  "call dein#add('nathanaelkane/vim-indent-guides')
+  "let g:indent_guides_enable_on_vim_startup = 1
+  "let g:indent_guides_auto_colors = 0
+  "hi IndentGuidesOdd  ctermbg=black
+  "hi IndentGuidesEven ctermbg=darkgrey
+
+  " インデントガイドライン
+  call dein#add('Yggdroot/indentLine')
+
   " gitを使えるようにする
   call dein#add('tpope/vim-fugitive')
+
+  " ステーラスラインの表示内容強化
+  call dein#add('itchyny/lightline')
+  set laststatus=2
+  set showmode " 現在のモードを表示
+  set showcmd " 打ったコマンドをステータスラインの下に表示
+  set ruler " ステータスラインの右側にカーソルの現在位置を表示
 
   " コード補完
   "call dein#add('Shougo/deoplete.nvim')
@@ -59,7 +69,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/neoinclude.vim')
 
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
+  " call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
 
   " Required:
   call dein#end()
@@ -145,6 +155,7 @@ if has("autocmd")
   autocmd FileType eruby  setlocal sw=2 sts=2 ts=2 et
   autocmd FileType scss   setlocal sw=2 sts=2 ts=2 et
   autocmd FileType yaml   setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType tex    setlocal sw=2 sts=2 ts=2 et
 endif
 
 "不可視文字の設定-----------------------------------------------------------
